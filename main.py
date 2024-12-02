@@ -6,7 +6,12 @@ from sklearn.metrics.pairwise import linear_kernel
 from sklearn.neighbors import NearestNeighbors
 
 # Load data
-cratings = pd.read_csv('data/ratings.csv')
+cratings1 = pd.read_csv('data/ratings.csv')
+cratings2 = pd.read_csv('data/ratings1.csv')
+
+# Combine cratings1 and cratings2
+cratings = pd.concat([cratings1, cratings2], ignore_index=True)
+
 books = pd.read_csv('data/books_cleaned.csv')
 
 # Set the page config to make it centered
